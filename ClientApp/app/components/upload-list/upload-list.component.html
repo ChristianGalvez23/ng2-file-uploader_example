@@ -1,0 +1,16 @@
+<table class="table table-sm table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>Name</th>
+            <th>Size ({{totalSize / 1024 / 1024 | number}} mb)</th>
+            <th>Last Modified Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of files.queue">
+            <td>{{f.some.name}}</td>
+            <td>{{f.some.size / 1024 | number}} kb</td>
+            <td>{{f.some.lastModifiedDate | date}}</td>
+        </tr>
+    </tbody>
+</table>

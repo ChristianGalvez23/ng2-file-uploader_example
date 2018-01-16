@@ -1,0 +1,15 @@
+<form #uploadForm="ngForm">
+    <div class="form-group">
+        <input id="selectFiles" style="display: none;" ng2FileSelect [uploader]="_uploadService.uploader" type="file" class="form-control"
+            multiple (change)="onFileSelected()" (progressFile)="selectFiles()">
+    </div>
+    <button type="button" class="btn btn-danger" (click)="selectFiles()">Select files</button>
+    <button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
+    {{progressFile}}
+</form>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <upload-list [files]="_uploadService.uploader" [totalSize]="totalSize"></upload-list>
+    </div>
+</div>
